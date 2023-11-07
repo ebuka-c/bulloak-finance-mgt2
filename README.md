@@ -1,4 +1,4 @@
-# bulloak_fin_mgt
+# bulloak_fin_mgt_fin_mgt
 
 A new Flutter project.
 

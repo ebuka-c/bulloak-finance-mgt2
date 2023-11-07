@@ -1,10 +1,11 @@
-import 'package:bulloak_fin_mgt/colors.dart';
-import 'package:bulloak_fin_mgt/screens/auth/login.dart';
-import 'package:bulloak_fin_mgt/screens/auth/sign_up.dart';
-import 'package:bulloak_fin_mgt/widgets/custom_button.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/login.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../colors.dart';
+import '../../widgets/custom_button.dart';
 
 class LaunchScreen extends StatelessWidget {
   const LaunchScreen({super.key});

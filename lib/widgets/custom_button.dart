@@ -1,6 +1,5 @@
-import 'package:bulloak_fin_mgt/colors.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -43,7 +42,7 @@ class CustomButton extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                   fontSize: w * 0.05,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),

@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(bulloak_fin_mgt LANGUAGES CXX)
+project(bulloak_fin_mgt_fin_mgt LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "bulloak_fin_mgt")
+set(BINARY_NAME "bulloak_fin_mgt_fin_mgt")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

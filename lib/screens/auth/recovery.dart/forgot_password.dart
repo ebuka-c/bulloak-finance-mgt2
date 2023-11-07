@@ -16,7 +16,7 @@ class ForgotPSWD extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
             elevation: 0,
             leading: GestureDetector(
                 onTap: () => Get.back(),

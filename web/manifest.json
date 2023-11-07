@@ -1,6 +1,6 @@
 {
-    "name": "bulloak_fin_mgt",
-    "short_name": "bulloak_fin_mgt",
+    "name": "bulloak_fin_mgt_fin_mgt",
+    "short_name": "bulloak_fin_mgt_fin_mgt",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

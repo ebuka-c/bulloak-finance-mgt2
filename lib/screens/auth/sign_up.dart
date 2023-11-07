@@ -1,4 +1,3 @@
-import 'package:bulloak_fin_mgt/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -190,7 +189,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: h * 0.02,
             ),
             GestureDetector(
-              onTap: () => Get.to(const LoginScreen()),
+              onTap: () {},
               child: CustomButton(
                 height: h * 0.08,
                 width: w * 0.8,

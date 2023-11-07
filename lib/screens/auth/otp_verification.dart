@@ -40,8 +40,7 @@ class OTPVerification extends StatelessWidget {
                   child: Text(
                     'Code has been sent to +234123*****90',
                     style: GoogleFonts.poppins(
-                        fontSize: w * 0.038,
-                        letterSpacing: -0.5,
+                        fontSize: w * 0.037,
                         fontWeight: FontWeight.w500,
                         color: Colors.black.withOpacity(0.8)),
                   ),
@@ -74,7 +73,7 @@ class OTPVerification extends StatelessWidget {
                 Text(
                   'Resend code in ${resendTime}s',
                   style: GoogleFonts.poppins(
-                      fontSize: w * 0.04,
+                      fontSize: w * 0.037,
                       fontWeight: FontWeight.w500,
                       color: Colors.black.withOpacity(0.8)),
                 ),
