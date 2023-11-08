@@ -170,7 +170,7 @@ class _SignUpScreenState extends State<ResetPSWD> {
                 height: h * 0.05,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () => Get.toNamed('/homenav'),
                 child: CustomButton(
                   height: h * 0.08,
                   width: w * 0.8,

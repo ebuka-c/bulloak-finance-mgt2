@@ -1,5 +1,3 @@
-import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/login.dart';
-import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +36,7 @@ class LaunchScreen extends StatelessWidget {
       ),
       GestureDetector(
         onTap: () {
-          Get.to(const LoginScreen());
+          Get.toNamed('/login');
         },
         child: CustomButton(
           height: h * 0.08,
@@ -60,7 +58,7 @@ class LaunchScreen extends StatelessWidget {
       ),
       GestureDetector(
         onTap: () {
-          Get.to(const SignUpScreen());
+          Get.toNamed('/signup');
         },
         child: CustomButton(
           height: h * 0.08,

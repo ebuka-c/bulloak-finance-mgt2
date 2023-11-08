@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../colors.dart';
-import '../nav_screens/portfolio.dart';
+import '../nav_screens/dashboard.dart';
 import '../nav_screens/settings.dart';
 import '../nav_screens/subscription.dart';
 import '../nav_screens/wallet.dart';

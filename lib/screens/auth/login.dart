@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../colors.dart';
 import '../../widgets/custom_button.dart';
-import 'recovery.dart/forgot_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -146,7 +145,7 @@ class _SignUpScreenState extends State<LoginScreen> {
               height: h * 0.02,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () => Get.toNamed('/homenav'),
               child: CustomButton(
                 height: h * 0.08,
                 width: w * 0.8,
@@ -167,7 +166,7 @@ class _SignUpScreenState extends State<LoginScreen> {
               height: h * 0.02,
             ),
             GestureDetector(
-              onTap: () => Get.to(const ForgotPSWD()),
+              onTap: () => Get.toNamed('/forgotpswd'),
               child: Text(
                 'Forgot Password?',
                 style:
@@ -210,9 +209,12 @@ class _SignUpScreenState extends State<LoginScreen> {
                   'Don\'t have an account? ',
                   style: GoogleFonts.poppins(),
                 ),
-                Text(
-                  ' Sign Up',
-                  style: GoogleFonts.poppins(color: Colors.blue),
+                GestureDetector(
+                  onTap: () => Get.offAllNamed('/signup'),
+                  child: Text(
+                    ' Sign Up',
+                    style: GoogleFonts.poppins(color: Colors.blue),
+                  ),
                 )
               ],
             )

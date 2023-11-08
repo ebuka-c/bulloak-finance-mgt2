@@ -15,7 +15,7 @@ class OTPVerification extends StatelessWidget {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
 
-    String sampleOTP = '1234';
+    // String sampleOTP = '1234';
     int resendTime = 26;
     return SafeArea(
       child: SafeArea(
@@ -54,7 +54,7 @@ class OTPVerification extends StatelessWidget {
                     appContext: context,
                     length: 4,
                     onChanged: (value) {
-                      print(value);
+                      // print(value);
                     },
                     pinTheme: PinTheme(
                       activeFillColor: AppColors.secondaryColor,
@@ -80,9 +80,7 @@ class OTPVerification extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: h * 0.35),
                   child: GestureDetector(
-                    onTap: () {
-                      onCompleted('1234');
-                    },
+                    onTap: () => Get.toNamed('/resetPSWD'),
                     child: CustomButton(
                       height: h * 0.08,
                       width: w * 0.8,

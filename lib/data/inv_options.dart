@@ -1,6 +1,6 @@
 List<dynamic> investments = [
   {
-    'invName': 'Forex',
+    'invName': 'Bitcoin',
     'value': '72535.40 USD',
     'amount': '\$ 504.80',
     'percentage': '+7.3%',
@@ -18,7 +18,7 @@ List<dynamic> investments = [
     'percentage': '+7.3%',
   },
   {
-    'invName': 'Forex',
+    'invName': 'Apple',
     'value': '72535.40 USD',
     'amount': '\$ 504.80',
     'percentage': '+7.3%',

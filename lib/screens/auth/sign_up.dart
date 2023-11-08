@@ -189,7 +189,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: h * 0.02,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () => Get.toNamed('/login'),
               child: CustomButton(
                 height: h * 0.08,
                 width: w * 0.8,
@@ -241,9 +241,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   'Already have an account? ',
                   style: GoogleFonts.poppins(),
                 ),
-                Text(
-                  ' Sign in',
-                  style: GoogleFonts.poppins(color: Colors.blue),
+                GestureDetector(
+                  onTap: () => Get.offAllNamed('/login'),
+                  child: Text(
+                    ' Sign in',
+                    style: GoogleFonts.poppins(color: Colors.blue),
+                  ),
                 )
               ],
             )

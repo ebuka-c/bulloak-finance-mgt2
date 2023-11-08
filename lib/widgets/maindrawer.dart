@@ -1,4 +1,3 @@
-import 'package:bulloak_fin_mgt_fin_mgt/google_nav/history/history.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,10 +5,11 @@ import 'package:iconsax/iconsax.dart';
 
 import '../screens/investment/inv_packages.dart';
 import '../screens/transactions/deposit.dart';
+import '../screens/transactions/transactionhistory.dart';
 import '../screens/transactions/withdraw.dart';
 
-class PortfolioDrawer extends StatelessWidget {
-  const PortfolioDrawer({
+class MainDrawer extends StatelessWidget {
+  const MainDrawer({
     super.key,
     required this.w,
   });
@@ -61,7 +61,7 @@ class PortfolioDrawer extends StatelessWidget {
               ),
               ListTile(
                 onTap: () {
-                  // Get.to(() => const History());
+                  Get.to(() => const TransactionHistory());
                 },
                 leading: const Icon(Iconsax.refresh),
                 title:
