@@ -4,8 +4,21 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/inv_plans.dart';
 
-class InvestmentPlans extends StatelessWidget {
+class InvestmentPlans extends StatefulWidget {
   const InvestmentPlans({super.key});
+
+  @override
+  State<InvestmentPlans> createState() => _InvestmentPlansState();
+}
+
+class _InvestmentPlansState extends State<InvestmentPlans> {
+  _InvestmentPlansState() {
+    _selectedDuration = _selectDuration[0];
+  }
+
+  final _selectDuration = ['1 Week', '2 Weeks', '3 Weeks', '1 Month'];
+
+  String? _selectedDuration = 'All Categories';
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +101,47 @@ class InvestmentPlans extends StatelessWidget {
                               ])),
                           SizedBox(height: h * 0.025),
                           Text(
-                            'Select Duration                              ',
-                            style: GoogleFonts.poppins(fontSize: w * 0.04),
+                            'Select Duration                                           ',
+                            style: GoogleFonts.poppins(
+                                fontSize: w * 0.035,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            height: 50,
+                            width: w * 0.56,
+                            child: DropdownButtonFormField(
+                              iconDisabledColor: Colors.grey[700],
+                              iconEnabledColor: Colors.grey[700],
+                              value: _selectedDuration,
+                              items: _selectDuration
+                                  .map(
+                                    (e) => DropdownMenuItem(
+                                      value: e,
+                                      child: Text(
+                                        e,
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.grey[700],
+                                            fontSize: 15),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                              onChanged: (value) {
+                                setState(() {
+                                  _selectedDuration = value as String;
+                                });
+                              },
+                              decoration:
+                                  const InputDecoration(fillColor: Colors.grey),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 5),
+                            height: 40,
+                            width: 180,
+                            color: Colors.black,
+                            child: TextField(),
                           )
                         ],
                       ))

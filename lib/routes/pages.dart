@@ -5,6 +5,7 @@ import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/otp_verification.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/recovery.dart/resetPSWD.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/sign_up.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/screens/home_nav/home_nav.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/investment/inv_plans.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/splash_screen.dart';
 import 'package:get/get.dart';
 
@@ -43,6 +44,10 @@ class AppPages {
     GetPage(
         name: AppRoutes.resetPSWD,
         page: () => const ResetPSWD(),
+        transition: Transition.rightToLeft),
+    GetPage(
+        name: AppRoutes.invPlans,
+        page: () => const InvestmentPlans(),
         transition: Transition.rightToLeft),
   ];
 }

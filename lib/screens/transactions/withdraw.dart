@@ -24,108 +24,111 @@ class Withdraw extends StatelessWidget {
             style: GoogleFonts.poppins(),
           ),
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: w * 0.05),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: h * 0.05),
-                  child: Text(
-                    'Minimum withdrawal = 0',
+        body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: w * 0.05),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: h * 0.05),
+                    child: Text(
+                      'Minimum withdrawal = 0',
+                      style: GoogleFonts.poppins(fontSize: w * 0.04),
+                    ),
+                  ),
+                  Text(
+                    'Minimum withdrawal = 99999999',
                     style: GoogleFonts.poppins(fontSize: w * 0.04),
                   ),
+                ],
+              ), //////////////
+              SizedBox(height: h * 0.04),
+              Container(
+                margin: EdgeInsets.only(right: w * 0.45),
+                child: Text(
+                  'Enter Amount',
+                  style: GoogleFonts.poppins(fontSize: w * 0.055),
                 ),
-                Text(
-                  'Minimum withdrawal = 99999999',
-                  style: GoogleFonts.poppins(fontSize: w * 0.04),
-                ),
-              ],
-            ), //////////////
-            SizedBox(height: h * 0.04),
-            Container(
-              margin: EdgeInsets.only(right: w * 0.45),
-              child: Text(
-                'Enter Amount',
-                style: GoogleFonts.poppins(fontSize: w * 0.055),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: h * 0.02),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  hintText: ' Enter Amount',
-                  focusedBorder: const OutlineInputBorder(
-                    // borderRadius: BorderRadius.circular(w * 0.05),
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
+              Container(
+                padding: EdgeInsets.only(top: h * 0.02),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    hintText: ' Enter Amount',
+                    focusedBorder: const OutlineInputBorder(
+                      // borderRadius: BorderRadius.circular(w * 0.05),
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                        width: 1.0,
+                      ),
                     ),
+                    labelStyle: const TextStyle(color: AppColors.fillText),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(w * 0.02),
+                        borderSide: const BorderSide(color: Colors.grey)),
                   ),
-                  labelStyle: const TextStyle(color: AppColors.fillText),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(w * 0.02),
-                      borderSide: const BorderSide(color: Colors.grey)),
                 ),
               ),
-            ),
-            SizedBox(height: h * 0.04),
+              SizedBox(height: h * 0.04),
 
-            ExpansionTile(
-              title: Text(
-                'Bitcoin',
-                style: GoogleFonts.poppins(),
+              ExpansionTile(
+                title: Text(
+                  'Bitcoin',
+                  style: GoogleFonts.poppins(),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_up,
+                ),
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(border: Border()),
+                  )
+                ],
               ),
-              trailing: const Icon(
-                Icons.keyboard_arrow_up,
-              ),
-              children: [
-                Container(
-                  decoration: const BoxDecoration(border: Border()),
-                )
-              ],
-            ),
-            SizedBox(height: h * 0.04),
+              SizedBox(height: h * 0.04),
 
-            Container(
-              padding: EdgeInsets.only(top: h * 0.02),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  hintText: ' Enter Address',
-                  focusedBorder: const OutlineInputBorder(
-                    // borderRadius: BorderRadius.circular(w * 0.05),
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
+              Container(
+                padding: EdgeInsets.only(top: h * 0.02),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    hintText: ' Enter Address',
+                    focusedBorder: const OutlineInputBorder(
+                      // borderRadius: BorderRadius.circular(w * 0.05),
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                        width: 1.0,
+                      ),
                     ),
+                    labelStyle: const TextStyle(color: AppColors.fillText),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(w * 0.02),
+                        borderSide: const BorderSide(color: Colors.grey)),
                   ),
-                  labelStyle: const TextStyle(color: AppColors.fillText),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(w * 0.02),
-                      borderSide: const BorderSide(color: Colors.grey)),
                 ),
               ),
-            ),
-            SizedBox(height: h * 0.15),
-            Center(
-              child: GestureDetector(
-                onTap: () {},
-                child: CustomButton(
-                  height: h * 0.08,
-                  width: w * 0.8,
-                  text: 'Withdraw',
-                  color: AppColors.secondaryColor,
-                  circularRadius: 50,
+              SizedBox(height: h * 0.15),
+              Center(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: CustomButton(
+                    height: h * 0.08,
+                    width: w * 0.8,
+                    text: 'Withdraw',
+                    color: AppColors.secondaryColor,
+                    circularRadius: 50,
+                  ),
                 ),
               ),
-            ),
-          ]),
+            ]),
+          ),
         ),
       ),
     );

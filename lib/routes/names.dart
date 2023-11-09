@@ -7,6 +7,7 @@ class AppRoutes {
   static const otpverify = '/otpverify';
   static const homenav = '/homenav';
   static const resetPSWD = '/resetPSWD';
+  static const invPlans = '/invPlans';
 
   // static const Login = '/login';
   // static const INITIAL = '/';

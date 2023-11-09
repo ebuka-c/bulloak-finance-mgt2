@@ -428,7 +428,7 @@ class _HomePageState extends State<DashBoard> {
                           }),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () => Get.toNamed('/invPlans'),
                       child: CustomButton(
                         height: h * 0.07,
                         width: w * 0.8,

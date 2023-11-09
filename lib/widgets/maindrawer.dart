@@ -77,7 +77,7 @@ class MainDrawer extends StatelessWidget {
                   Iconsax.bank4,
                   color: Colors.white,
                 ),
-                collapsedIconColor: Colors.white,
+                collapsedIconColor: Colors.grey.shade700,
                 children: [
                   //drop-downs
                   Padding(
