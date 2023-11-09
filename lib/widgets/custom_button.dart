@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
       required this.width,
       required this.text,
       required this.circularRadius,
+      this.fontWeight,
       this.icon,
       this.color,
       this.boxShadow});
@@ -19,6 +20,7 @@ class CustomButton extends StatelessWidget {
   final List<BoxShadow>? boxShadow;
   final Widget? icon;
   final Color? color;
+  final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,8 @@ class CustomButton extends StatelessWidget {
               style: GoogleFonts.poppins(
                   fontSize: w * 0.05,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                  fontWeight:
+                      fontWeight == null ? FontWeight.bold : fontWeight),
             ),
           ],
         ),

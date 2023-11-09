@@ -1,3 +1,4 @@
+import 'package:bulloak_fin_mgt_fin_mgt/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -138,11 +139,53 @@ class _InvestmentPlansState extends State<InvestmentPlans> {
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 5),
-                            height: 40,
-                            width: 180,
+                            height: h * 0.06,
+                            width: w * 0.55,
                             color: Colors.black,
-                            child: TextField(),
-                          )
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  'Amount:',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white, fontSize: 13),
+                                ),
+                                SizedBox(
+                                  height: h * 0.04,
+                                  width: w * 0.25,
+                                  child: TextField(
+                                      style: GoogleFonts.poppins(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                      keyboardType: TextInputType.number,
+                                      cursorColor: Colors.grey,
+                                      cursorHeight: h * 0.035,
+                                      decoration: InputDecoration(
+                                          floatingLabelBehavior:
+                                              FloatingLabelBehavior.never,
+                                          labelText: 'Enter Amount',
+                                          labelStyle: GoogleFonts.poppins(
+                                              color: AppColors.fillText,
+                                              fontSize: 12),
+                                          border: InputBorder.none)),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: h * 0.02),
+                          Stack(children: [
+                            Image.asset(plans[index]['button']),
+                            Positioned(
+                              top: h * 0.01,
+                              left: w * 0.1,
+                              child: Text(
+                                'PROCEED',
+                                style: GoogleFonts.poppins(
+                                    color: Colors.white, fontSize: 16),
+                              ),
+                            )
+                          ])
                         ],
                       ))
                 ]),

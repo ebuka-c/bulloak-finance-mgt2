@@ -37,12 +37,14 @@ class Withdraw extends StatelessWidget {
                     margin: EdgeInsets.only(top: h * 0.05),
                     child: Text(
                       'Minimum withdrawal = 0',
-                      style: GoogleFonts.poppins(fontSize: w * 0.04),
+                      style: GoogleFonts.poppins(
+                          fontSize: w * 0.04, color: AppColors.primaryColor),
                     ),
                   ),
                   Text(
                     'Minimum withdrawal = 99999999',
-                    style: GoogleFonts.poppins(fontSize: w * 0.04),
+                    style: GoogleFonts.poppins(
+                        fontSize: w * 0.04, color: AppColors.primaryColor),
                   ),
                 ],
               ), //////////////
