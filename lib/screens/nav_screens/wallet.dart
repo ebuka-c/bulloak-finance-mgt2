@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Wallet extends StatelessWidget {
-  const Wallet({super.key});
+class Stats extends StatelessWidget {
+  const Stats({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text('Wallet')),
+      body: Center(child: Text('Statistics')),
     );
   }
 }

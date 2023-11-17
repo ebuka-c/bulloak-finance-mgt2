@@ -1,7 +1,7 @@
 import 'package:bulloak_fin_mgt_fin_mgt/colors.dart';
-import 'package:bulloak_fin_mgt_fin_mgt/screens/google_nav/history/history.dart';
-import 'package:bulloak_fin_mgt_fin_mgt/screens/google_nav/other_screens/acc_balance.dart';
-import 'package:bulloak_fin_mgt_fin_mgt/screens/nav_screens/dashboard.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/history_nav/history/history.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/history_nav/other_screens/acc_balance.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/transactions/transactionhistory.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:iconsax/iconsax.dart';
@@ -23,9 +23,9 @@ class _HomeState extends State<HistoryNav> {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     final List<Widget> screens = [
-      const DashBoard(),
       const History(),
-      const Wallet(),
+      const TransactionHistory(),
+      const Stats(),
       const AccBal()
     ];
     return Scaffold(
@@ -44,8 +44,8 @@ class _HomeState extends State<HistoryNav> {
               padding: EdgeInsets.symmetric(
                   horizontal: w * 0.05, vertical: h * 0.018),
               tabs: const [
-                GButton(icon: Icons.home, text: 'Home'),
                 GButton(icon: Icons.history, text: 'History'),
+                GButton(icon: Iconsax.transaction_minus, text: 'Transactions'),
                 GButton(icon: Icons.bar_chart, text: 'Charts'),
                 GButton(icon: Iconsax.wallet_15, text: 'Wallet'),
               ],

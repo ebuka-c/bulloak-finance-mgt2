@@ -13,10 +13,24 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<LoginScreen> {
+  final authKey = GlobalKey<FormState>();
+
+  // text controllers
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+
   String password = '';
   bool obscureText = true;
 
   bool boxValue = false;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -57,6 +71,7 @@ class _SignUpScreenState extends State<LoginScreen> {
                         ),
                   ),
                   child: TextFormField(
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     style: const TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -92,6 +107,7 @@ class _SignUpScreenState extends State<LoginScreen> {
                         ),
                   ),
                   child: TextFormField(
+                    controller: passwordController,
                     style: const TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       hintText: ' PASSWORD',
@@ -118,6 +134,14 @@ class _SignUpScreenState extends State<LoginScreen> {
                       ),
                     ),
                     obscureText: obscureText,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Password field cannnot be empty';
+                      } else if (value.length < 8) {
+                        return 'Password should be up to 8 characters';
+                      }
+                      return null;
+                    },
                   ),
                 ),
               ),

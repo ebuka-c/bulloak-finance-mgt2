@@ -155,7 +155,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
           SizedBox(height: h * 0.02),
           Container(
             width: w,
-            height: h * 0.645,
+            height: h * 0.569,
             decoration: BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),

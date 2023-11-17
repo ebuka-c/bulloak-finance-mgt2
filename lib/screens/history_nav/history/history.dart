@@ -47,7 +47,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
               GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500)),
       trailing: Text('\$10.00',
           style: GoogleFonts.poppins(
-              fontSize: 13, color: AppColors.secondaryColor)),
+              fontSize: 13,
+              color: AppColors.secondaryColor,
+              fontWeight: FontWeight.w400)),
     ),
     ReusableTabBody(
       avatar: const CircleAvatar(
@@ -64,7 +66,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
               GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500)),
       trailing: Text('\$10.00',
           style: GoogleFonts.poppins(
-              fontSize: 13, color: AppColors.secondaryColor)),
+              fontSize: 13,
+              color: AppColors.secondaryColor,
+              fontWeight: FontWeight.w400)),
     ),
     ReusableTabBody(
       avatar: const CircleAvatar(
@@ -80,7 +84,8 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
           style:
               GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500)),
       trailing: Text('\$10.00',
-          style: GoogleFonts.poppins(fontSize: 13, color: Colors.red)),
+          style: GoogleFonts.poppins(
+              fontSize: 13, color: Colors.red, fontWeight: FontWeight.w400)),
     ),
     ReusableTabBody(
       avatar: const CircleAvatar(backgroundColor: Colors.white, radius: 25),
@@ -90,7 +95,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
               GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500)),
       trailing: Text('\$10.00',
           style: GoogleFonts.poppins(
-              fontSize: 13, color: AppColors.secondaryColor)),
+              fontSize: 13,
+              color: AppColors.secondaryColor,
+              fontWeight: FontWeight.w400)),
     ),
     ReusableTabBody(
       avatar: const CircleAvatar(backgroundColor: Colors.white, radius: 25),
@@ -100,7 +107,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
               GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500)),
       trailing: Text('\$10.00',
           style: GoogleFonts.poppins(
-              fontSize: 13, color: AppColors.secondaryColor)),
+              fontSize: 13,
+              color: AppColors.secondaryColor,
+              fontWeight: FontWeight.w400)),
     ),
   ];
 

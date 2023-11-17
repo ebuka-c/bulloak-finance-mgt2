@@ -5,8 +5,20 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../colors.dart';
 import '../../widgets/custom_button.dart';
 
-class Withdraw extends StatelessWidget {
+class Withdraw extends StatefulWidget {
   const Withdraw({super.key});
+
+  @override
+  State<Withdraw> createState() => _WithdrawState();
+}
+
+class _WithdrawState extends State<Withdraw> {
+  _TransactionHistoryState() {
+    _selectedVal = _selectPaymentType[0];
+  }
+
+  final _selectPaymentType = ['BITCOIN', 'ETH', 'USDT', 'PAYPAL', 'XRP'];
+  String? _selectedVal = 'BITCOIN';
 
   @override
   Widget build(BuildContext context) {
@@ -79,19 +91,33 @@ class Withdraw extends StatelessWidget {
               ),
               SizedBox(height: h * 0.04),
 
-              ExpansionTile(
-                title: Text(
-                  'Bitcoin',
-                  style: GoogleFonts.poppins(),
+              Container(
+                margin: const EdgeInsets.only(left: 20, bottom: 10),
+                height: 50,
+                width: w,
+                child: DropdownButtonFormField(
+                  iconDisabledColor: Colors.grey[700],
+                  iconEnabledColor: Colors.grey[700],
+                  value: _selectedVal,
+                  items: _selectPaymentType
+                      .map(
+                        (e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e,
+                            style: GoogleFonts.poppins(
+                                color: Colors.grey[700], fontSize: 15),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedVal = value as String;
+                    });
+                  },
+                  decoration: const InputDecoration(border: InputBorder.none),
                 ),
-                trailing: const Icon(
-                  Icons.keyboard_arrow_up,
-                ),
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(border: Border()),
-                  )
-                ],
               ),
               SizedBox(height: h * 0.04),
 

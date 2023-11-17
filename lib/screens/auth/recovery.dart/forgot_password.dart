@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../colors.dart';
 import '../../../widgets/custom_button.dart';
-import '../otp_verification.dart';
 
 class ForgotPSWD extends StatelessWidget {
   const ForgotPSWD({super.key});
@@ -121,7 +120,7 @@ class ForgotPSWD extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(const OTPVerification());
+                      Get.toNamed('/otpverify');
                     },
                     child: CustomButton(
                       height: h * 0.08,

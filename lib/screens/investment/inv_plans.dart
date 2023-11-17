@@ -178,7 +178,7 @@ class _InvestmentPlansState extends State<InvestmentPlans> {
                             Image.asset(plans[index]['button']),
                             Positioned(
                               top: h * 0.01,
-                              left: w * 0.1,
+                              left: w * 0.11,
                               child: Text(
                                 'PROCEED',
                                 style: GoogleFonts.poppins(

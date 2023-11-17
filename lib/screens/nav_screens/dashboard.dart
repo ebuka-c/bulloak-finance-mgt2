@@ -211,7 +211,8 @@ class _HomePageState extends State<DashBoard> {
                                             '\$',
                                             style: GoogleFonts.poppins(
                                                 color: Colors.white,
-                                                fontSize: 14),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
                                           ),
                                           const SizedBox(
                                             width: 1,
@@ -220,7 +221,7 @@ class _HomePageState extends State<DashBoard> {
                                             '2,535.40',
                                             style: GoogleFonts.poppins(
                                               fontSize: 15,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                               color: Colors.white,
                                             ),
                                           ),

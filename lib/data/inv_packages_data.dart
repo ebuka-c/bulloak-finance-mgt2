@@ -1,6 +1,6 @@
 List<dynamic> packages = [
   {
-    'name': 'Forex',
+    'name': 'Forest',
     'image': 'assets/packages/forex.png',
   },
   {

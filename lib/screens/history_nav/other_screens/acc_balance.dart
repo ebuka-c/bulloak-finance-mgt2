@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../data/wallet_cards.dart';
+
 class AccBal extends StatefulWidget {
   const AccBal({super.key});
 
@@ -132,7 +134,7 @@ class _AccBalState extends State<AccBal> {
               SizedBox(
                 height: 250,
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: cards.length,
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Row(
@@ -162,7 +164,7 @@ class _AccBalState extends State<AccBal> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('August',
+                                      Text(cards[index]['month'],
                                           style: GoogleFonts.poppins(
                                             fontSize: w * 0.07,
                                             fontWeight: FontWeight.w600,

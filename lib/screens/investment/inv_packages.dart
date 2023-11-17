@@ -74,7 +74,8 @@ class InvestmentPackages extends StatelessWidget {
                     child: Center(
                         child: Text(
                       '${packages[index]['name']} Plan',
-                      style: GoogleFonts.poppins(fontSize: 15),
+                      style: GoogleFonts.poppins(
+                          fontSize: 15, fontWeight: FontWeight.w500),
                     )),
                   )),
                 ),

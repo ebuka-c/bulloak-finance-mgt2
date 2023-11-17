@@ -117,7 +117,7 @@ class _SignUpScreenState extends State<ResetPSWD> {
                           Icons.lock,
                           color: AppColors.fillText,
                         ),
-                        hintText: ' PASSWORD',
+                        hintText: ' CONFIRM PASSWORD',
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(w * 0.05),
                           borderSide: const BorderSide(

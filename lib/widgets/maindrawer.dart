@@ -1,3 +1,4 @@
+import 'package:bulloak_fin_mgt_fin_mgt/screens/history_nav/history/history_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,11 +62,10 @@ class MainDrawer extends StatelessWidget {
               ),
               ListTile(
                 onTap: () {
-                  Get.to(() => const TransactionHistory());
+                  Get.to(() => const HistoryNav());
                 },
                 leading: const Icon(Iconsax.refresh),
-                title:
-                    Text('Transaction History', style: GoogleFonts.poppins()),
+                title: Text('History', style: GoogleFonts.poppins()),
               ),
               ///////Expansion tile
               ExpansionTile(

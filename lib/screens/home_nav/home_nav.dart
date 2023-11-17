@@ -22,7 +22,7 @@ class _HomeState extends State<HomeNav> {
     final List<Widget> tabs = [
       const DashBoard(),
       const Subscription(),
-      const Wallet(),
+      const Stats(),
       const Settings()
     ];
     return Scaffold(
