@@ -133,7 +133,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                       children: <TextSpan>[
                     const TextSpan(text: 'In: '),
                     TextSpan(
-                        text: 'N675,777,768.00',
+                        text: 'N675,777,768.05',
                         style: GoogleFonts.poppins(
                             color: Colors.black.withOpacity(0.4))),
                   ])),
@@ -146,7 +146,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                       children: <TextSpan>[
                     const TextSpan(text: 'Out: '),
                     TextSpan(
-                        text: 'N453,765.88',
+                        text: 'N453,765.87',
                         style: GoogleFonts.poppins(
                             color: Colors.black.withOpacity(0.4))),
                   ])),

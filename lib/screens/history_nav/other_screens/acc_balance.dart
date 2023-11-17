@@ -50,9 +50,9 @@ class _AccBalState extends State<AccBal> {
                           fontSize: w * 0.035,
                           color: Colors.black.withOpacity(0.6)),
                     ),
-                    SizedBox(height: h * 0.012),
+                    SizedBox(height: h * 0.03),
                     SizedBox(
-                      height: h * 0.32,
+                      height: h * 0.34,
                       width: w,
                       child: BarChart(BarChartData(
                           gridData: FlGridData(show: false),
@@ -122,7 +122,7 @@ class _AccBalState extends State<AccBal> {
                             ]),
                           ])),
                     ),
-                    SizedBox(height: h * 0.03),
+                    SizedBox(height: h * 0.04),
                     Text(
                       'Account Reports',
                       style: GoogleFonts.inter(

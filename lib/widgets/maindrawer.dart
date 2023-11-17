@@ -6,7 +6,6 @@ import 'package:iconsax/iconsax.dart';
 
 import '../screens/investment/inv_packages.dart';
 import '../screens/transactions/deposit.dart';
-import '../screens/transactions/transactionhistory.dart';
 import '../screens/transactions/withdraw.dart';
 
 class MainDrawer extends StatelessWidget {

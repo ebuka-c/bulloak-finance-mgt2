@@ -1,12 +1,12 @@
 import 'package:bulloak_fin_mgt_fin_mgt/colors.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/screens/history_nav/history/history.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/screens/history_nav/other_screens/acc_balance.dart';
-import 'package:bulloak_fin_mgt_fin_mgt/screens/transactions/transactionhistory.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../nav_screens/wallet.dart';
+import '../other_screens/transactionhistory.dart';
 
 class HistoryNav extends StatefulWidget {
   const HistoryNav({super.key});

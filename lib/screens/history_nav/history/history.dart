@@ -132,7 +132,7 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
             SingleChildScrollView(
               child: Container(
                 width: w,
-                height: h * 0.448,
+                height: h * 0.5,
                 decoration: BoxDecoration(
                   color: AppColors.secondaryColor.withOpacity(0.1),
                   borderRadius: const BorderRadius.only(
