@@ -1,4 +1,5 @@
 import 'package:bulloak_fin_mgt_fin_mgt/colors.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/controllers/auth_controller.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/splashscreen',
       getPages: AppPages.routes,
+      onInit: () {
+        Get.put(AuthController(), permanent: true);
+      },
     );
   }
 }

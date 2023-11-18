@@ -1,3 +1,4 @@
+import 'package:bulloak_fin_mgt_fin_mgt/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +14,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<LoginScreen> {
-  final authKey = GlobalKey<FormState>();
+  final loginKey = GlobalKey<FormState>();
+
+  // auth controller
+  var authController = Get.find<AuthController>();
 
   // text controllers
   var emailController = TextEditingController();
@@ -22,7 +26,7 @@ class _SignUpScreenState extends State<LoginScreen> {
   String password = '';
   bool obscureText = true;
 
-  bool boxValue = false;
+  bool rememberMe = false;
 
   @override
   void dispose() {
@@ -58,92 +62,107 @@ class _SignUpScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: h * 0.03),
             //////
-            Padding(
-              padding: EdgeInsets.only(left: w * 0.08, right: w * 0.08),
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: AppColors.fillColor),
-                child: Theme(
-                  data: Theme.of(context).copyWith(
-                    colorScheme: ThemeData().colorScheme.copyWith(
-                          primary: Colors.grey,
+            Form(
+              key: loginKey,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: w * 0.08, right: w * 0.08),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: AppColors.fillColor),
+                      child: Theme(
+                        data: Theme.of(context).copyWith(
+                          colorScheme: ThemeData().colorScheme.copyWith(
+                                primary: Colors.grey,
+                              ),
                         ),
-                  ),
-                  child: TextFormField(
-                    controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      hintText: ' EMAIL',
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(w * 0.05),
-                        borderSide: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                      ),
-                      labelStyle: const TextStyle(color: AppColors.fillText),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(w * 0.02),
-                          borderSide: const BorderSide(color: Colors.grey)),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: h * 0.03),
-            Padding(
-              padding: EdgeInsets.only(left: w * 0.08, right: w * 0.08),
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: AppColors.fillColor),
-                child: Theme(
-                  data: Theme.of(context).copyWith(
-                    colorScheme: ThemeData().colorScheme.copyWith(
-                          primary: Colors.grey,
-                        ),
-                  ),
-                  child: TextFormField(
-                    controller: passwordController,
-                    style: const TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      hintText: ' PASSWORD',
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(w * 0.05),
-                        borderSide: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                      ),
-                      labelStyle: const TextStyle(color: AppColors.fillText),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(w * 0.02)),
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            obscureText = !obscureText;
-                          });
-                        },
-                        child: Icon(
-                          obscureText ? Icons.visibility : Icons.visibility_off,
-                          color: Colors.grey,
+                        child: TextFormField(
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: InputDecoration(
+                            hintText: ' EMAIL',
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(w * 0.05),
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                            ),
+                            labelStyle:
+                                const TextStyle(color: AppColors.fillText),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(w * 0.02),
+                              borderSide: const BorderSide(color: Colors.grey),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (!GetUtils.isEmail(value!)) {
+                              return 'Invalid email';
+                            }
+                            return null;
+                          },
                         ),
                       ),
                     ),
-                    obscureText: obscureText,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Password field cannnot be empty';
-                      } else if (value.length < 8) {
-                        return 'Password should be up to 8 characters';
-                      }
-                      return null;
-                    },
                   ),
-                ),
+                  SizedBox(height: h * 0.03),
+                  Padding(
+                    padding: EdgeInsets.only(left: w * 0.08, right: w * 0.08),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: AppColors.fillColor),
+                      child: Theme(
+                        data: Theme.of(context).copyWith(
+                          colorScheme: ThemeData().colorScheme.copyWith(
+                                primary: Colors.grey,
+                              ),
+                        ),
+                        child: TextFormField(
+                          controller: passwordController,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: InputDecoration(
+                            hintText: ' PASSWORD',
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(w * 0.05),
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                            ),
+                            labelStyle:
+                                const TextStyle(color: AppColors.fillText),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(w * 0.02)),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  obscureText = !obscureText;
+                                });
+                              },
+                              child: Icon(
+                                obscureText
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          obscureText: obscureText,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Password field cannnot be empty';
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
@@ -153,10 +172,10 @@ class _SignUpScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
-                    value: boxValue,
+                    value: rememberMe,
                     onChanged: (value) {
                       setState(() {
-                        boxValue = value!;
+                        rememberMe = value!;
                       });
                     }),
                 Text(
@@ -169,21 +188,33 @@ class _SignUpScreenState extends State<LoginScreen> {
               height: h * 0.02,
             ),
             GestureDetector(
-              onTap: () => Get.toNamed('/homenav'),
-              child: CustomButton(
-                height: h * 0.08,
-                width: w * 0.8,
-                text: 'Login',
-                color: AppColors.primaryColor,
-                circularRadius: 50,
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color(0x54000000),
-                    offset: Offset(0, 4),
-                    blurRadius: 3,
-                  ),
-                ],
-              ),
+              onTap: () {
+                if (loginKey.currentState!.validate()) {
+                  authController.signInUser(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                    rememberMe: rememberMe,
+                  );
+                }
+              },
+              child: Obx(() {
+                return CustomButton(
+                  height: h * 0.08,
+                  width: w * 0.8,
+                  text: authController.isLoading.value
+                      ? 'loading . . .'
+                      : 'Login',
+                  color: AppColors.primaryColor,
+                  circularRadius: 50,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0x54000000),
+                      offset: Offset(0, 4),
+                      blurRadius: 3,
+                    ),
+                  ],
+                );
+              }),
             ),
 
             SizedBox(
