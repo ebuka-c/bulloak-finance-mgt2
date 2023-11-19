@@ -14,4 +14,10 @@ class BulloakAPI {
 
   static const String verifyEmailEndpoint =
       "$baseUrl/user/auth/verify-email/"; //POST
+
+  //Dashboard
+
+  static const String availableBalance = ""; //GET
+  static const String bookBalance = ""; //GET
+  static const String liveProfit = ""; //GET
 }

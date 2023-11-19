@@ -27,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   String password = '';
   bool obscureText = true;
+  bool ObscureTextPSWDConfirm = true;
 
   @override
   void dispose() {
@@ -195,18 +196,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
-                              obscureText = !obscureText;
+                              ObscureTextPSWDConfirm = !ObscureTextPSWDConfirm;
                             });
                           },
                           child: Icon(
-                            obscureText
+                            ObscureTextPSWDConfirm
                                 ? Icons.visibility
                                 : Icons.visibility_off,
                             color: Colors.grey,
                           ),
                         ),
                       ),
-                      obscureText: obscureText,
+                      obscureText: ObscureTextPSWDConfirm,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Password field cannnot be empty';
