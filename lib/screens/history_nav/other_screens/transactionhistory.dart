@@ -146,7 +146,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                       children: <TextSpan>[
                     const TextSpan(text: 'Out: '),
                     TextSpan(
-                        text: 'N453,765.87',
+                        text: 'N453,765.88',
                         style: GoogleFonts.poppins(
                             color: Colors.black.withOpacity(0.4))),
                   ])),
@@ -155,7 +155,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
           SizedBox(height: h * 0.02),
           Container(
             width: w,
-            height: h * 0.569,
+            height: h * 0.61,
             decoration: BoxDecoration(color: Colors.white, boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
