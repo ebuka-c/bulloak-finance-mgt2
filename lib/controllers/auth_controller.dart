@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bulloak_fin_mgt_fin_mgt/routes/names.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/screens/auth/recovery.dart/resetPSWD.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/services/api_endpoints.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/services/helper_methods.dart';
 import 'package:bulloak_fin_mgt_fin_mgt/widgets/custom_snackbar.dart';
@@ -168,6 +169,75 @@ class AuthController extends GetxController {
     } catch (e) {
       isLoading.value = false;
       debugPrint("Verification: $e");
+    }
+  }
+
+  // This function start password reset: sends otp
+  Future<void> startPasswordReset(String email) async {
+    Map<String, String> resetBody = {
+      "email": email,
+    };
+
+    isLoading.value = true;
+
+    Response response = await _getConnect.post(
+      BulloakAPI.passwordResetEndpoint,
+      resetBody,
+      headers: myFreeHeaders(),
+    );
+
+    if (response.statusCode == 200) {
+      isLoading.value = false;
+      bulloakSnackbar(
+        message: "Reset code has been sent to the email you provided",
+        isError: false,
+      );
+      // Go to complete pswd reset otp
+      Get.to(const ResetPSWD());
+    } else {
+      isLoading.value = false;
+      debugPrint(response.statusText);
+      bulloakSnackbar(
+        message: 'Reset Password failed',
+        isError: true,
+      );
+    }
+  }
+
+  // This function completes password reset
+  Future<void> completePswdReset(
+      {required String newPswd, required String otp}) async {
+    Map<String, String> resetBody = {
+      "password": newPswd,
+      "verification_code": otp
+    };
+
+    isLoading.value = true;
+
+    Response response = await _getConnect.post(
+      BulloakAPI.passwordResetCompleteEndpoint,
+      resetBody,
+      headers: myFreeHeaders(),
+    );
+
+    if (response.statusCode == 200) {
+      bulloakSnackbar(
+        message: 'Successful',
+        isError: false,
+      );
+      isLoading.value = false;
+      // Go to login
+      Get.offAllNamed(AppRoutes.login);
+    } else {
+      debugPrint("BODY: ${response.body}");
+      debugPrint("STATUS: ${response.statusCode}");
+      debugPrint(response.statusText);
+      isLoading.value = false;
+      bulloakSnackbar(
+        message:
+            "${response.statusText!}: invalid or expired verification code",
+        isError: true,
+      );
     }
   }
 }
