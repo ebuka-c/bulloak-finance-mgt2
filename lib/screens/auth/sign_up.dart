@@ -1,6 +1,9 @@
+import 'package:bulloak_fin_mgt_fin_mgt/controllers/auth_controller.dart';
+import 'package:bulloak_fin_mgt_fin_mgt/services/helper_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../colors.dart';
 import '../../widgets/custom_button.dart';
@@ -15,6 +18,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final regKey = GlobalKey<FormState>();
 
+  var authController = Get.find<AuthController>();
+
   // text controllers
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -22,8 +27,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   String password = '';
   bool obscureText = true;
-
-  bool boxValue = false;
 
   @override
   void dispose() {
@@ -209,6 +212,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           return 'Password field cannnot be empty';
                         } else if (value.length < 8) {
                           return 'Password should be up to 8 characters';
+                        } else if (value != passwordController.text) {
+                          return 'Password mismatch';
                         }
                         return null;
                       },
@@ -218,41 +223,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: h * 0.03),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Checkbox(
-                      value: boxValue,
-                      onChanged: (value) {
-                        setState(() {
-                          boxValue = value!;
-                        });
-                      }),
-                  Text(
-                    'Remeber Me',
-                    style: GoogleFonts.poppins(fontSize: h * 0.02),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Checkbox(
+              //         value: rememberMe,
+              //         onChanged: (value) {
+              //           setState(() {
+              //             rememberMe = value!;
+              //           });
+              //         }),
+              //     Text(
+              //       'Remeber Me',
+              //       style: GoogleFonts.poppins(fontSize: h * 0.02),
+              //     ),
+              //   ],
+              // ),
               SizedBox(
-                height: h * 0.02,
+                height: h * 0.04,
               ),
               GestureDetector(
-                onTap: () => Get.toNamed('/login'),
-                child: CustomButton(
-                  height: h * 0.08,
-                  width: w * 0.8,
-                  color: AppColors.primaryColor,
-                  text: 'Sign Up',
-                  circularRadius: 50,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x54000000),
-                      offset: Offset(0, 4),
-                      blurRadius: 3,
-                    ),
-                  ],
-                ),
+                onTap: () async {
+                  if (regKey.currentState!.validate()) {
+                    authController.signUpUser(
+                      email: emailController.text.trim(),
+                      userName: emailController.text.trim(),
+                      password: passwordController.text.trim(),
+                      referralCode: 'string',
+                    );
+                  }
+                },
+                child: Obx(() {
+                  return CustomButton(
+                    height: h * 0.08,
+                    width: w * 0.8,
+                    color: AppColors.primaryColor,
+                    text: authController.isLoading.value
+                        ? 'loading . . .'
+                        : 'Sign Up',
+                    circularRadius: 50,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x54000000),
+                        offset: Offset(0, 4),
+                        blurRadius: 3,
+                      ),
+                    ],
+                  );
+                }),
               ),
               SizedBox(
                 height: h * 0.02,

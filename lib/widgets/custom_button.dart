@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {super.key,
-      required this.height,
-      required this.width,
-      required this.text,
-      required this.circularRadius,
-      this.fontWeight,
-      this.icon,
-      this.color,
-      this.boxShadow});
+  const CustomButton({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.text,
+    required this.circularRadius,
+    this.fontWeight,
+    this.icon,
+    this.color,
+    this.boxShadow,
+  });
 
   final double height;
   final double width;
