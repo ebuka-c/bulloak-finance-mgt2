@@ -114,6 +114,9 @@ class AuthController extends GetxController {
         await shp.setString(EMAIL, email);
         await shp.setString(PASSWORD, password);
         await shp.setBool(IS_REMEMBER, rememberMe);
+        await shp.setString(TOKEN, response.body["token"]["access"]);
+
+        print("TOKEN FROM DB: ${response.body["token"]["access"]}");
 
         isLoading.value = false;
         bulloakSnackbar(isError: false, message: 'Login Successful');

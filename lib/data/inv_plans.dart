@@ -1,3 +1,5 @@
+import 'dart:math';
+
 List<dynamic> plans = [
   {
     'image': 'assets/plans/standardrect.png',
@@ -45,3 +47,10 @@ List<dynamic> plans = [
     'max': '\$10000000'
   },
 ];
+
+int generateRandomIndex() {
+  Random random = new Random();
+  int randomNumber = random.nextInt(5);
+  print("TESTING Random: $randomNumber");
+  return randomNumber;
+}

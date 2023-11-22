@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bulloak_fin_mgt_fin_mgt/controllers/plan_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
@@ -192,7 +193,7 @@ class _HomePageState extends State<DashBoard> {
                                           Text(
                                             '47,300.00',
                                             style: GoogleFonts.poppins(
-                                              fontSize: 28,
+                                              fontSize: w * 0.055,
                                               fontWeight: FontWeight.w600,
                                               color: Colors.white,
                                             ),
@@ -220,7 +221,7 @@ class _HomePageState extends State<DashBoard> {
                                           Text(
                                             '2,535.40',
                                             style: GoogleFonts.poppins(
-                                              fontSize: 15,
+                                              fontSize: w * 0.03,
                                               fontWeight: FontWeight.w600,
                                               color: Colors.white,
                                             ),
@@ -231,7 +232,7 @@ class _HomePageState extends State<DashBoard> {
                                           Text(
                                             '5.7%',
                                             style: GoogleFonts.poppins(
-                                              fontSize: 15,
+                                              fontSize: w * 0.035,
                                               fontWeight: FontWeight.w500,
                                               color: Colors.white,
                                             ),
@@ -290,18 +291,28 @@ class _HomePageState extends State<DashBoard> {
                               padding: const EdgeInsets.all(2.0),
                               child: Container(
                                 decoration: kInnerDecoration,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(right: w * 0.03),
-                                      child: Text("Deposit",
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    var pc = Get.put(PlanController());
+                                    await pc.fetchAllPlans();
+                                  },
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            EdgeInsets.only(right: w * 0.03),
+                                        child: Text(
+                                          "Deposit",
                                           style: GoogleFonts.poppins(
-                                              fontSize: w * 0.04,
-                                              fontWeight: FontWeight.w400)),
-                                    ),
-                                    Image.asset('assets/icons/deposit.png')
-                                  ],
+                                            fontSize: w * 0.04,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ),
+                                      Image.asset('assets/icons/deposit.png')
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -449,7 +460,8 @@ class _HomePageState extends State<DashBoard> {
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    SizedBox(height: w * 0.1),
                   ],
                 ),
               ),

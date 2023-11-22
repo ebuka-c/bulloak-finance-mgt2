@@ -14,4 +14,9 @@ class BulloakAPI {
 
   static const String verifyEmailEndpoint =
       "$baseUrl/user/auth/verify-email/"; //POST
+
+  // PLANS
+  static const String getAllPlansEndpoint = "$baseUrl/plans/"; //GET
+
+  static const String subscribeToPlanEndpoint = "$baseUrl/plans/"; // POST
 }
